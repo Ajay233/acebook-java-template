@@ -43,11 +43,17 @@ public class HomeController {
 		model.addAttribute("allPosts", postRepository.findById((long)1));
 		model.addAttribute("toString", postRepository.toString());
 		model.addAttribute("findAll", postRepository.findAll());
+
+
 		Optional<Post> post2 = postRepository.findById(id);
+
+
 		model.addAttribute("findById", post2);
 		model.addAttribute("findByIdString", post2.toString());
-		model.addAttribute("find", post2.get().getContent());
 		model.addAttribute("test", postRepository.getClass());
+
+
+		model.addAttribute("find", post2.get().getContent());
 		return "posts";
 	}
 
